@@ -10,11 +10,14 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    ThemeMode mode = ThemeMode.system;
     return MaterialApp(
       title: 'Star',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        useMaterial3: true,
+        brightness: Brightness.dark,
       ),
+      themeMode: mode,
       home: const TopPage(),
     );
   }
