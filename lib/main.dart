@@ -33,13 +33,42 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: Center(
-        child: Text(
-          'Hello, world!',
-          style: TextStyle(fontSize: 24),
-        ),
-      ),
+          child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Stack(
+            children: [
+              Container(
+                padding: const EdgeInsets.all(32),
+                child: Image.network(
+                    "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png",
+                    height: 100,
+                    width: 100),
+              ),
+              Container(
+                padding: const EdgeInsets.all(0),
+                child: const Text(
+                  'No.25',
+                  style: TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+            ],
+          ),
+          const Text(
+            'Pikachu',
+            style: TextStyle(
+              fontSize: 24,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          const Chip(label: Text('electric'), backgroundColor: Colors.yellow),
+        ],
+      )),
     );
   }
 }
